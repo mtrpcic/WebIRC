@@ -18,11 +18,9 @@ Then visit `localhost:8080` in your browser.
 
 # Known Limitations #
 * Bad form data on the home page will crash the server, as it is not validated
-* Incoming messages from the IRC server are not properly escaped, so HTML/Javascript injection is possible
 * Sometimes there is a race condition that causes the IRC connection to happen **before** the WebSocket is fully connected, and no data will show up in the browser chat window
 
 # To Do #
-* Sanitize incoming messages for HTML tags to stop javascript injection
 * Add some form validation
 * Add support for web-based actions (/nick, /action, /me)
 * Add support for multiple channels
