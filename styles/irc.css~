@@ -1,0 +1,47 @@
+body { 
+  padding: 0; 
+  margin: 0;
+  background-color: #666666;
+}
+
+#container {
+  width: 1000px;
+  margin: 0px auto;
+  margin-top: 5px;
+  background-color: #121212;
+}
+
+#header {
+  text-align: center;
+  font-size: 32px;
+  color: white;
+  border-bottom: 1px solid white;
+  padding-bottom: 5px;
+}
+
+#chat_window { 
+  margin: 5px;
+  padding: 5px; 
+  width: 980px; 
+  height: 600px; 
+  overflow-y: scroll;
+  color: #FFFFFF;
+  font-size: 12px;
+  font-family: "monospace"
+}
+
+#action_console {
+  border-top: 1px solid #cccccc;
+  padding: 5px; 
+  width: 990px;
+}
+
+#action_console input {
+  border: 1px solid white;
+  background-color: #212121;
+  color: white;
+}
+
+#to_send { 
+  width: 930px;
+}

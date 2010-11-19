@@ -1,0 +1,32 @@
+body {
+  font: 13.34px helvetica,arial,freesans,clean,sans-serif;
+}
+
+#form {
+  width: 350px;
+  margin: 0px auto;
+  padding: 15px;
+  border: 1px solid #000000;
+  background-color: #BEBEDE;
+}
+
+#form label {
+  width: 120px;
+  float: left;
+}
+
+.submit {
+  margin-left: 123px;
+}
+#header {
+  width: 370px;
+  padding: 5px;
+  border: 1px solid black;
+  background-color: #99999F;
+  margin: 0px auto;
+  margin-bottom: 5px;
+  text-align: center;
+  font-family: Vera, Helvetica, Georgia;
+  text-transform: uppercase;
+  font-size: 36px;
+}
