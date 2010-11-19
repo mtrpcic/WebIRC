@@ -1,4 +1,5 @@
 from twisted.words.protocols import irc
+from cgi import escape
 
 class TalkBot(irc.IRCClient):
     def _get_nickname(self):
@@ -20,7 +21,7 @@ class TalkBot(irc.IRCClient):
         data = {
             'nickname' : user.split("!")[0],
             'channel'  : channel,
-            'message'  : msg,
+            'message'  : escape(msg),
             'type'     : 'message'
         }
         self.factory.socket_server.send(data)
@@ -29,7 +30,7 @@ class TalkBot(irc.IRCClient):
         data = {
             'nickname' : user.split("!")[0],
             'channel'  : channel,
-            'message'  : msg,
+            'message'  : escape(msg),
             'type'     : 'action'
         }
         self.factory.socket_server.send(data)
@@ -61,7 +62,7 @@ class TalkBot(irc.IRCClient):
     def userQuit(self, user, message):
         data = {
             'nickname' : user.split("!")[0],
-            'message'  : message,
+            'message'  : escape(message),
             'type'     : 'quit'
         }
         self.factory.socket_server.send(data)
