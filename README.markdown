@@ -4,6 +4,7 @@ without the need for a Java Applet or Flash components.  It makes use of the HTM
 
 # Running WebIRC #
 To run WebIRC, you'll need the following packages:
+
 * Python 2.6.x
 * Twisted v8.2.0+
 * [Mako](http://www.makotemplates.org/)
