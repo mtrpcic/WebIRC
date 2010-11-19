@@ -1,2 +1,0 @@
-#from webirc import talk_bot, talk_bot_factory, socket_server
-#from webirc.web import home, chat
