@@ -1,4 +1,4 @@
-body { 
+body, html { 
   padding: 0; 
   margin: 0;
   background-color: #666666;
@@ -9,6 +9,8 @@ body {
   margin: 0px auto;
   margin-top: 5px;
   background-color: #121212;
+  font-size: 12px;
+  font-family: "monospace"
 }
 
 #header {
@@ -21,16 +23,26 @@ body {
 
 #chat_window { 
   margin: 5px;
+  float: left;
   padding: 5px; 
-  width: 980px; 
+  width: 850px; 
   height: 600px; 
   overflow-y: scroll;
   color: #FFFFFF;
-  font-size: 12px;
-  font-family: "monospace"
+}
+
+#names_window {
+    margin: 5px;
+    padding: 5px;
+    float: right;
+    width: 110px;
+    height: 600px;
+    overflow-y: scroll;
+    color: #FFFFFF;
 }
 
 #action_console {
+  clear: both;
   border-top: 1px solid #cccccc;
   padding: 5px; 
   width: 990px;
@@ -44,4 +56,8 @@ body {
 
 #to_send { 
   width: 930px;
+}
+
+.name {
+  display: block;
 }

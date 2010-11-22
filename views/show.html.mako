@@ -15,6 +15,7 @@
       ${channel} on ${server}
     </div>
     <div id="chat_window"></div>
+    <div id="names_window"></div>
     <div id="action_console">
       <form id='send_message'>
         <input type='text' id='to_send' />

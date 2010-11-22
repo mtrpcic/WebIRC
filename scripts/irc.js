@@ -1,21 +1,33 @@
-  var chat_contexts = {
+  var message_contexts = {
       'message': function(data){
-          return "&lt;" + data.nickname + "&gt; " + data.message + "<br />";
+          populateChat("&lt;" + data.nickname + "&gt; " + data.message + "<br />");
       },
       'action' : function(data){
-          return "* " + data.nickname + " " + data.message + "<br />";
+          populateChat("* " + data.nickname + " " + data.message + "<br />");
       },
       'join'   : function(data){
-          return "* Joins: " + data.nickname + "<br />";
+          $("#names_window").append("<span class='name' id='user_" + data.nickname + "'>" + data.nickname + "</span>");
+          populateChat("* Joins: " + data.nickname + "<br />");
       },
       'part'   : function(data){
-          return "* Parts: " + data.nickname + "<br />";
+          $("#user_" + data.nickname).remove();
+          populateChat("* Parts: " + data.nickname + "<br />");
       },
       'rename' : function(data){
-          return "* " + data.old_nickname + " is now known as " + data.new_nickname + "<br />";
+          $("#user_" + data.old_nickname).html(data.new_nickname);
+          $("#user_" + data.old_nickname).attr('id', "user_" + data.new_nickname);
+          populateChat("* " + data.old_nickname + " is now known as " + data.new_nickname + "<br />");
       },
       'quit'   : function(data){
-          return "* Quits: " + data.nickname + " (" + data.message + ")<br />";
+          $("#user_" + data.nickname).remove();
+          populateChat("* Quits: " + data.nickname + " (" + data.message + ")<br />");
+      },
+      'names'  : function(data){
+          console.log(data.names);
+          for(var i = 0; i < data.names.length; i++){
+              $("#names_window").append("<span class='name' id='user_" + data.names[i] + "'>" + data.names[i] + "</span>");
+          }
+          //populate the names here
       }
   };
   
@@ -36,7 +48,7 @@
 
         ws.onmessage = function (evt) {
             var data = JSON.parse(evt.data);
-            populateChat(chat_contexts[data.type](data));
+            message_contexts[data.type](data);
         };
         
         ws.onerror = function(e) {
@@ -56,8 +68,7 @@
             token: 'abc'
         }
         ws.send(JSON.stringify(data));
-        populateChat(chat_contexts['message']({nickname: NICKNAME, message: message}))
-//        populateChat("&lt;" + NICKNAME + "&gt; " + message + "<br>");
+        message_contexts['message']({nickname: NICKNAME, message: message})
         return false;
     });
 });
