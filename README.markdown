@@ -19,12 +19,13 @@ Then visit `localhost:8080` in your browser.
 # Known Limitations #
 * Bad form data on the home page will crash the server, as it is not validated
 * Sometimes there is a race condition that causes the IRC connection to happen **before** the WebSocket is fully connected, and no data will show up in the browser chat window
+* The 'New Message' field allows users to enter text before the client has actually joined the channel
 
 # To Do #
 * Add some form validation
 * Add support for web-based actions (/nick, /action, /me)
 * Add support for multiple channels
-
+* Add support for multiple clients attached to a single server
 
 # Disclaimer #
 This code is still under development, and as such, minor revisions may drastically change functionality.
