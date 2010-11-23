@@ -3,10 +3,12 @@ from twisted.internet import reactor
 from ConfigParser import SafeConfigParser
 from txwebsockets import WebSocketFactory
 
+import webirc
 from webirc.socket_server import SocketServer
 from webirc.web import home, chat
 
 if __name__ == "__main__":
+    print "Starting WebIRC v%s" % webirc.version
     socket_server = SocketServer()
     socket_factory = WebSocketFactory(socket_server)
     
