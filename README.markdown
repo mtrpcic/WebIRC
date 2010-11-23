@@ -9,6 +9,7 @@ To run WebIRC, you'll need the following packages:
 * Twisted v8.2.0+
 * [Mako](http://www.makotemplates.org/)
 * [txwebsockets](https://github.com/gleicon/txwebsockets)
+* A browser that supports the WebSocket protocol
 
 Once all packages are installed, simply go into the root of the project and type the following into your terminal:
 
@@ -24,7 +25,10 @@ Then visit `localhost:8080` in your browser.
 # To Do #
 * Add some form validation
 * Add support for web-based actions (/nick, /action, /me)
+* Automatically highlight hyperlinks in the chat panel
+* Add CSS to highlight your username, and when somebody explicitly messages you
 * Add support for multiple channels
+* Add support for 1 on 1 messaging
 * Add support for multiple clients attached to a single server
 
 # Disclaimer #
