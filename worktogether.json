@@ -1,0 +1,17 @@
+{
+    "name": "WebIRC",
+    "description": "IRC chat in real time, in your browser.",
+    "categories": [
+        "Social",
+        "Web Development",
+        "Open Source",
+        "WebSockets"​
+    ],
+    "difficulty": 4,
+    "tasks": [
+        "Write Unit Tests",
+        "Test In Browsers",
+        "Update Documentation"​,
+        "Update Dependencies"
+    ]
+}
